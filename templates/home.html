@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"
-    <title>hello</title>
     <link rel='icon' href type="image/*">
+    <title>hello</title>
+  </head>
     <style>
       body{
         margin: 0;
@@ -36,8 +37,13 @@
         max-width: 720px;
         margin: 0 auto;
       }
+      #contentbtn{
+        margin-top:21px;
+        border-radius: 2rem;
+        padding:4px 4px;
+        background-color: rgb(100,100,255);
+      }
     </style>
-  </head>
   <body>
     <div class="content">
     <h1>HyqyJ Careers</h1>
@@ -47,7 +53,18 @@
       Lorem ipsum dolor sit amet， consectetur adipiscing elit， sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam， quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident， sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
     <h2>Open Positions</h2>
-    <p class="bodytext">TODO - Show the jobs here</p>
+    <div class="bodytext">
+      <div>
+        {% for job in jobs%}
+        <h4 style="margin-bottom: 2px">{{job['title']}}</h4>
+        <div style="width:100%;border-bottom:1px solid #ccc;padding-bottom:18px"><b>Location:</b>{{job['location']}}
+        <a id="Apply"href=""><button style="float:right; padding:6px; border-radius:2rem;background-color:#FFF;color:blue;border:1px solid">Apply</button></a>
+        </div>
+        
+        {% endfor %}
+        
+      </div>
+    </div>
       <div style="text-align:center;">
     <button id="contentbtn">Contact ZH-CN</button>
         <p>copyright 2023, hyqyj</p>
